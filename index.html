@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POSA PHARMACY & MHDC</title>
+  <style>
+/* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+/* ===== Header ===== */
+header {
+  text-align: center;
+  background: #2c7a7b;
+  color: #fff;
+  padding: 20px 10px;
+}
+
+header img.center-img {
+  display: grid;
+  margin: 0 auto 10px;
+  border-radius: 15px;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* ===== Navigation Bar ===== */
+nav {
+  background: #2c7a7b;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px 0;
+  position: relative;
+}
+
+nav a {
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background: #1e5d5f;
+  border-radius: 5px;
+}
+
+/* ===== Sections ===== */
+section {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+section h2 {
+  color: #2c7a7b;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+section p,
+section ul {
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+/* --- STUDENT SECTION STYLING --- */
+#student-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+#student-section h2 {
+  text-align: center;
+  color: #2c7a7b;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+#student-section h3 {
+  color: #2c7a7b;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+#student-section ul {
+  list-style: disc;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: #000000;
+}
+
+#student-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+#student-section input,
+#student-section textarea,
+#student-section select {
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+#student-section input:focus,
+#student-section textarea:focus,
+#student-section select:focus {
+  border-color: #2c7a7b;
+  outline: none;
+}
+
+#student-section button {
+  background-color: #2c7a7b;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#student-section button:hover {
+  background-color: #2c7a7b;
+}
+
+/* ===== Order Section ===== */
+#order form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#order form input,
+#order form textarea,
+#order form button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#order form button {
+  background: #2c7a7b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#order form button:hover {
+  background: #276766;
+}
+
+#order p {
+  font-size: 1rem;
+  color: #333;
+}
+/* CONSULTATION FORM STYLES */
+#consultation {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f9fc;
+  padding: 2rem 1rem;
+}
+
+#consultation .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#consultation .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #2c7a7c;
+}
+
+#consultation .consultation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+#consultation .consultation-form input,
+#consultation .consultation-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+#consultation .consultation-form input:focus,
+#consultation .consultation-form textarea:focus {
+  outline: none;
+  border-color: #2c7a7b;
+  box-shadow: 0 0 5px rgba(0,1,0,0);
+}
+
+#consultation .consultation-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#consultation .btn-submit {
+  padding: 0.85rem 1.5rem;
+  background-color: #2c7a7b;
+  color: #fff;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#consultation .btn-submit:hover {
+  background-color: #2c7a7b;
+  transform: translateY(-2px);
+}
+
+#consultation .btn-submit:active {
+  transform: translateY(0);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 640px) {
+  #consultation .container {
+    padding: 1rem;
+  }
+
+  #consultation .section-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===== Owner Section ===== */
+#owner img {
+  display: block;
+  margin: 10px auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ===== Contact Section ===== */
+#contact p {
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #2c7a7b;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* ===== Back to Top Button ===== */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: #2a7a7b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none; 
+  z-index: 1000;
+}
+
+#backToTop:hover {
+  background: #1e5d5f;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  #order form {
+    padding: 20px;
+  }
+}
+.photospeaks-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: nowrap; /* Allows stacking on small screens */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.photospeaks-item img {
+    width: 100%;
+    max-width: 500px; /* Limit image width */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.photospeaks-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Stack images vertically on small screens */
+@media screen and (max-width: 768px) {
+    .photospeaks-container {
+        flex-direction: column;
+        gap: 20px;
+    
+}
+  }
+</style>
+</head>
+<body>
+
+<header>
+<div class="logos">
+          <img src="https://i.ibb.co/Vpkg6VpW/IMG-20250815-WA0042.jpg" alt="IMG-20250815-WA0042" width="150px" height="150px"></a>
+  <h1>POSA PHARMACY & MY HEALTH AND DRUG CONSULT (MHDC)</h1>
+  <p>Your trusted health & education partner</p>
+</header>
+
+<nav>
+  <a href="#home" class="active">Home</a>
+  <a href="#about">About Us</a>
+  <a href="#services">Services</a>
+  <a href="#student-section">Student Services</a>
+  <a href="#products">Products</a>
+  <a href="#consultation">Consultation</a>
+  <a href="#contact">Contact Us</a>
+</nav>
+
+<!-- Home Section -->
+<section id="home">
+  <h2>Welcome</h2>
+  <p id="banner">Hello, we're glad you're here!</p>
+</section>
+
+<!-- About Section -->
+<section id="about">
+  <h2>Who We Are</h2>
+  <p>POSA Pharmacy & My Health and Drug Consult (MHDC) is a professional healthcare and educational consultancy dedicated to improving lives through expert advice, consultation, and high-quality services.</p>
+
+  <h2>Our Vision</h2>
+  <p>To be the leading provider of integrated healthcare and educational solutions, fostering health, knowledge, and professional growth.</p>
+
+  <h2>Our Values</h2>
+  <ul>
+    <li>Integrity and professionalism</li>
+    <li>Excellence in service delivery</li>
+    <li>Client and student-centered approach</li>
+    <li>Continuous learning and growth</li>
+  </ul>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <h2>POSA Pharmacy Services</h2>
+  <ul>
+    <li><strong>Prescription Dispensing:</strong> Fast and accurate filling of your prescriptions by licensed pharmacists.</li>
+    <li><strong>Over-the-Counter Medication:</strong> Wide variety of non-prescription medicines and health products.</li>
+    <li><strong>Medication Counseling:</strong> Expert advice on proper medication use and management.</li>
+    <li><strong>Health Screenings:</strong> Routine blood pressure, glucose, and cholesterol checks.</li>
+    <li><strong>Vaccination Services:</strong> Immunizations to protect you and your family.</li>
+    <li><strong>Home Delivery:</strong> Convenient delivery of medications to your doorstep.</li>
+  </ul>
+
+  <h2>MHDC Services</h2>
+  <ul>
+    <li><strong>Academic and Education Consultation:</strong> We assist students with academic planning and choosing the right course for a successful educational journey.</li>
+    <li><strong>Admission Consultation For Students:</strong> We guide students through the admission process into schools, colleges, and universities.</li>
+    <li><strong>Career Coaching:</strong> Helps individuals discover their strengths, plan professional paths, and achieve career success.</li>
+    <li><strong>Job Placement Services:</strong> We connect qualified individuals with job opportunities, especially in the healthcare sector.</li>
+    <li><strong>Health And Drug Workshop Training:</strong> Workshops on health education, drug safety, and awareness.</li>
+    <li><strong>Training For Pharmacists, Clinics, and PPMVs:</strong> Specialized training to improve healthcare delivery and business management.</li>
+    <li><strong>Leadership and Mentoring:</strong> Mentoring to develop leadership skills, confidence, and professional growth.</li>
+    <li><strong>Healthcare Consultation:</strong> Expert advice to help individuals understand their health concerns.</li>
+    <li><strong>Drug Consultation:</strong> Guidance on safe use of medicines, including dosages and side effects.</li>
+    <li><strong>Consultation For Colleges of Health Sciences:</strong> Advisory services on training and curriculum development.</li>
+  </ul>
+  <!-- STUDENT SECTION -->
+<section id="student-section">
+  <h2>Student Services</h2>
+  
+  <!-- List of Services -->
+  <div id="services">
+    <h3>We Provide:</h3>
+    <ul>
+      <li>ADMISSION FOR STUDENTS</li>
+      <li>JOB PLACEMENT FOR CLIENTS/STUDENTS</li>
+      <li>INDEXING REGISTRATION FOR STUDENTS</li>
+      <li>NATIONAL REGISTRATION FOR STUDENTS</li>
+      <li>CONSULTANCY SERVICES FOR COLLEGE OF HEALTHS</li>
+      <li>WAEC/NECO COACHING AND REGISTRATION</li>
+      <li>MEDICAL AND PHARMACY TEXTBOOK SALES</li>
+      <li>BULK PRINTING OF MATERIALS</li>
+      <li>PROJECT TOPICS, SEMINAR WORKS AND FINAL YEAR PROJECTS WRITING GUIDE</li>
+      <li>OTHER(SPECIFY)</li>
+    </ul>
+  </div>
+
+  <!-- Student Inquiry Form -->
+  <form id="studentForm">
+    <input type="text" name="studentName" placeholder="Your Name" required>
+    <input type="email" name="studentEmail" placeholder="Your Email" required>
+
+    <!-- Services Multi-Select -->
+    <label for="servicesSelect">Select Services Needed:</label>
+    <select name="selectedServices" id="servicesSelect" multiple required>
+      <option>ADMISSION FOR STUDENTS</option>
+      <option>JOB PLACEMENT FOR CLIENTS/STUDENTS</option>
+      <option>INDEXING REGISTRATION FOR STUDENTS</option>
+      <option>NATIONAL REGISTRATION FOR STUDENTS</option>
+      <option>CONSULTANCY SERVICES FOR COLLEGE OF HEALTHS</option>
+      <option>WAEC/NECO COACHING AND REGISTRATION</option>
+      <option>MEDICAL AND PHARMACY TEXTBOOK SALES</option>
+      <option>BULK PRINTING OF MATERIALS</option>
+      <option>PROJECT TOPICS, SEMINAR WORKS AND FINAL YEAR PROJECTS WRITING GUIDE</option>
+      <option>OTHER(SPECIFY)</option>
+    </select>
+
+    <!-- Dynamic Notes / Specify Area -->
+    <div id="serviceNotes"></div>
+
+    <!-- Message / Inquiry -->
+    <textarea name="studentMessage" placeholder="Your Message / Inquiry" required></textarea>
+
+    <button type="button" onclick="sendStudentInquiry()">Send Inquiry</button>
+  </form>
+
+  <script>
+    const servicesSelect = document.getElementById('servicesSelect');
+    const serviceNotes = document.getElementById('serviceNotes');
+
+    // Generate note/quantity input for each selected service
+    servicesSelect.addEventListener('change', () => {
+      const selectedValues = Array.from(servicesSelect.selectedOptions).map(opt => opt.value);
+      serviceNotes.innerHTML = ''; // Clear previous inputs
+
+      selectedValues.forEach(service => {
+        const div = document.createElement('div');
+        div.style.marginTop = '10px';
+
+        const label = document.createElement('label');
+        label.textContent = service === 'Other (Specify)' ? 'Specify Other Service:' : `Notes for ${service}:`;
+
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.placeholder = service === 'Other (Specify)' ? 'Enter other service' : 'Enter details or quantity';
+        input.name = `note_${service.replace(/\s+/g,'_')}`;
+
+        div.appendChild(label);
+        div.appendChild(document.createElement('br'));
+        div.appendChild(input);
+
+        serviceNotes.appendChild(div);
+      });
+    });
+
+    function sendStudentInquiry() {
+      const name = document.querySelector('input[name="studentName"]').value;
+      const email = document.querySelector('input[name="studentEmail"]').value;
+      const messageText = document.querySelector('textarea[name="studentMessage"]').value;
+
+      const selectedValues = Array.from(servicesSelect.selectedOptions).map(opt => opt.value);
+      let message = `Hello, I am a student and I would like to inquire about the following services:\n\nName: ${name}\nEmail: ${email}\n`;
+
+      selectedValues.forEach(service => {
+        const inputName = `note_${service.replace(/\s+/g,'_')}`;
+        const noteValue = document.querySelector(`input[name="${inputName}"]`).value;
+        message += `${service}: ${noteValue || 'No additional details'}\n`;
+      });
+
+      message += `Message: ${messageText}`;
+
+      const url = `https://wa.me/2347066176003?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</section>
+</section>
+
+<!-- Products Section -->
+<section id="products">
+  <h2>Pharmaceutical Products</h2>
+  <ul>
+    <li>Prescription Medicines</li>
+    <li>Over-the-Counter Drugs</li>
+    <li>Health Supplements</li>
+    <li>Vaccines</li>
+    <li>Personal Care Products</li>
+  </ul>
+
+  <h2>Medical Equipment</h2>
+  <ul>
+    <li>Blood Pressure Monitors</li>
+    <li>Glucose Meters</li>
+    <li>Thermometers</li>
+    <li>First Aid Kits</li>
+  </ul>
+</section>
+
+</section>
+<section id="order" style="padding:15px; max-width:600px; margin:auto; font-family:sans-serif;">
+  <h2 style="text-align:center;">Place an Order</h2>
+  <form id="orderForm" style="display:flex; flex-direction:column; gap:10px;">
+    <input type="text" name="customerName" placeholder="Your Name" required style="padding:10px; font-size:16px;">
+    <input type="email" name="customerEmail" placeholder="Your Email" required style="padding:10px; font-size:16px;">
+
+    <label for="drugSelect">Select Medicines / Products:</label>
+    <select id="drugSelect" multiple style="padding:10px; font-size:16px;">
+        <!-- Pain Relief / Analgesics -->
+        <option>Paracetamol</option>
+        <option>Ibuprofen</option>
+        <option>Aspirin</option>
+        <option>Diclofenac</option>
+        <option>Tramadol</option>
+        <option>Naproxen</option>
+        <option>Ketoprofen</option>
+        <option>Codeine Phosphate</option>
+        <option>Acetaminophen with Codeine</option>
+        <!-- Antibiotics -->
+        <option>Amoxicillin</option>
+        <option>Azithromycin</option>
+        <option>Ciprofloxacin</option>
+        <option>Metronidazole</option>
+        <option>Clarithromycin</option>
+        <option>Doxycycline</option>
+        <option>Erythromycin</option>
+        <option>Levofloxacin</option>
+        <option>Ofloxacin</option>
+        <option>Clindamycin</option>
+        <option>Cefuroxime</option>
+        <option>Ceftriaxone</option>
+        <option>Cefixime</option>
+        <option>Amoxicillin-Clavulanate</option>
+        <option>Tetracycline</option>
+        <option>Chloramphenicol</option>
+        <!-- Antimalarials -->
+        <option>Artemether-Lumefantrine</option>
+        <option>Quinine Sulfate</option>
+        <option>Chloroquine</option>
+        <option>Primaquine</option>
+        <option>Mefloquine</option>
+        <option>Sulfadoxine-Pyrimethamine</option>
+        <!-- Antifungals -->
+        <option>Fluconazole</option>
+        <option>Ketoconazole</option>
+        <option>Itraconazole</option>
+        <option>Clotrimazole</option>
+        <option>Nystatin</option>
+        <option>Griseofulvin</option>
+        <option>Miconazole</option>
+        <!-- Antihypertensives -->
+        <option>Amlodipine</option>
+        <option>Lisinopril</option>
+        <option>Losartan</option>
+        <option>Enalapril</option>
+        <option>Valsartan</option>
+        <option>Hydrochlorothiazide</option>
+        <option>Furosemide</option>
+        <option>Metoprolol</option>
+        <option>Atenolol</option>
+        <option>Propranolol</option>
+        <option>Carvedilol</option>
+        <option>Clonidine</option>
+        <!-- Diabetes Medications -->
+        <option>Metformin</option>
+        <option>Glibenclamide</option>
+        <option>Gliclazide</option>
+        <option>Insulin Regular</option>
+        <option>Insulin NPH</option>
+        <option>Insulin Glargine</option>
+        <option>Sitagliptin</option>
+        <option>Pioglitazone</option>
+        <!-- Other -->
+        <option value="other">Other (Specify)</option>
+    </select>
+
+    <!-- Inline input for "Other" -->
+    <input type="text" id="otherInput" placeholder="Specify other drug" style="padding:10px; font-size:16px; display:none;">
+
+    <!-- Container for selected drugs -->
+    <div id="selectedDrugsContainer" style="display:flex; flex-direction:column; gap:8px; margin-top:10px;"></div>
+
+    <textarea name="address" placeholder="Delivery Address" required style="padding:10px; font-size:16px;"></textarea>
+
+    <button type="button" onclick="placeOrder()" style="padding:12px; font-size:18px; background:#28a745; color:white; border:none; border-radius:5px; cursor:pointer;">
+      Place Order
+    </button>
+  </form>
+</section>
+
+<script>
+const drugSelect = document.getElementById('drugSelect');
+const container = document.getElementById('selectedDrugsContainer');
+const otherInput = document.getElementById('otherInput');
+let currentDrugs = [];
+
+function updateDrugRows() {
+    const selected = Array.from(drugSelect.selectedOptions).map(opt => opt.value);
+
+    // Show or hide the "Other" input
+    if(selected.includes('other')) {
+        otherInput.style.display = 'block';
+    } else {
+        otherInput.style.display = 'none';
+    }
+
+    // Remove deselected drugs
+    currentDrugs = currentDrugs.filter(d => selected.includes(d.name) && d.name !== 'other');
+
+    // Add newly selected drugs
+    selected.forEach(drug => {
+        if(drug !== 'other' && !currentDrugs.some(d => d.name === drug)) {
+            currentDrugs.push({name: drug, quantity: '', price: ''});
+        }
+    });
+
+    renderDrugRows();
+}
+
+function renderDrugRows() {
+    container.innerHTML = '';
+    currentDrugs.forEach((drug, index) => {
+        const row = document.createElement('div');
+        row.style.display = 'flex';
+        row.style.flexDirection = 'column';
+        row.style.gap = '5px';
+        row.style.border = '1px solid #ccc';
+        row.style.padding = '8px';
+        row.style.borderRadius = '5px';
+
+        row.innerHTML = `
+            <div style="display:flex; gap:5px; flex-wrap:wrap;">
+                <input type="text" value="${drug.name}" readonly style="flex:2; padding:8px; font-size:16px;">
+                <input type="number" placeholder="Quantity" min="1" value="${drug.quantity}" oninput="updateQuantity(${index}, this.value)" style="flex:1; padding:8px; font-size:16px;">
+                <input type="text" placeholder="Price (₦)" value="${drug.price}" oninput="updatePrice(${index}, this.value)" style="flex:1; padding:8px; font-size:16px;">
+                <button type="button" onclick="removeDrug(${index})" style="padding:8px; background:#dc3545; color:white; border:none; border-radius:5px; cursor:pointer;">Remove</button>
+            </div>
+        `;
+        container.appendChild(row);
+    });
+}
+
+function updateQuantity(index, value) { currentDrugs[index].quantity = value; }
+function updatePrice(index, value) { currentDrugs[index].price = value; }
+
+function removeDrug(index) {
+    const removed = currentDrugs.splice(index, 1)[0];
+    const option = Array.from(drugSelect.options).find(o => o.value === removed.name);
+    if(option) option.selected = false;
+    renderDrugRows();
+}
+
+drugSelect.addEventListener('change', updateDrugRows);
+
+otherInput.addEventListener('input', () => {
+    const existing = currentDrugs.find(d => d.name === 'Other');
+    if(otherInput.value.trim() === '') {
+        currentDrugs = currentDrugs.filter(d => d.name !== 'Other');
+    } else {
+        if(existing) {
+            existing.name = otherInput.value;
+        } else {
+            currentDrugs.push({name: otherInput.value, quantity: '', price: ''});
+        }
+    }
+    renderDrugRows();
+});
+
+function placeOrder() {
+    const name = document.querySelector('input[name="customerName"]').value;
+    const email = document.querySelector('input[name="customerEmail"]').value;
+    const address = document.querySelector('textarea[name="address"]').value;
+
+    if(currentDrugs.length === 0) {
+        alert('Please select at least one drug.');
+        return;
+    }
+
+    let message = `Hello, I would like to place an order:\n\nName: ${name}\nEmail: ${email}\nAddress: ${address}\n\nDrugs:\n`;
+    currentDrugs.forEach(d => { message += `- ${d.name} | Quantity: ${d.quantity} | Price: ${d.price}\n`; });
+
+    const url = `https://wa.me/2347066176003?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+}
+</script>
+</section>
+</section>
+</section>  
+<!-- CONSULTATION FORM -->
+<section id="consultation" class="consultation-section">
+  <div class="container">
+    <h2 class="section-title">Book a Consultation</h2>
+    <form id="consultForm" class="consultation-form" onsubmit="openWhatsApp(event)">
+      
+      <label for="fullName" class="sr-only">Full Name</label>
+      <input 
+        type="text" 
+        id="fullName" 
+        name="fullName" 
+        placeholder="Full Name" 
+        required
+        class="form-input"
+      >
+      
+      <label for="email" class="sr-only">Email Address</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        placeholder="Email Address" 
+        required
+        class="form-input"
+      >
+      
+      <label for="concern" class="sr-only">Health Concern</label>
+      <textarea 
+        id="concern" 
+        name="concern" 
+        placeholder="Describe your health concern..." 
+        required
+        class="form-textarea"
+      ></textarea>
+      
+      <button type="submit" class="btn-submit">Submit Request</button>
+    </form>
+  </div>
+</section>
+
+<script>
+function openWhatsApp(event) {
+  event.preventDefault(); // prevent form submission
+  const name = document.getElementById('fullName').value;
+  const email = document.getElementById('email').value;
+  const concern = document.getElementById('concern').value;
+
+  const message = `Hello, my name is ${name}. Email: ${email}. Concern: ${concern}`;
+  const whatsappNumber = '2347066176003';
+  const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+  window.open(whatsappURL, '_blank');
+}
+</script>
+<!-- Owner Section -->
+<section id="owner">
+  <h2>Meet The Owner</h2>
+  <img src="https://i.ibb.co/RkrPtMxr/IMG-20250813-WA0030.jpg" alt="Owner Photo" width="150px" height="300px">
+  <h3>PHARM OKE SILAS ADEYEMI</h3>
+  <p>As the visionary CEO of POSA PHARMACY and MY HEALTH AND DRUG CONSULT (MHDC), Pharm Oke Silas Adeyemi is a respected leader in healthcare service delivery. He is committed to excellence and has built a reputation for leadership, innovation, and mentorship.</p>
+  <p><strong>LEADERSHIP AND MENTORSHIP:</strong> Pharm Oke is dedicated to nurturing the next generation of healthcare professionals. He provides leadership, mentoring, and consultation services to students, empowering them with the knowledge, skills, and confidence to excel in their careers. His guidance and expertise have been invaluable to many students, helping them navigate the complexities of the healthcare industry and providing them with job coaching and job placements that have helped many.He has a proven track record of mentoring others into becoming a good healthcare service provider.</p>
+  <p><strong>CONSULTING SERVICES:</strong> In addition to his leadership roles, Pharm Oke offers consulting services to colleges of health, providing expert advice and support to students, faculty, and administrators most especially on admission increase , providing consultation on accreditation and indexing  . His consulting services focus on curriculum development, program evaluation, and strategic planning, helping institutions achieve their goals and improve  outcomes.</p>
+  <p><strong>COMMITMENT TO EXCELLENCE:</strong> Through his work at POSA PHARMACY and MY HEALTH AND DRUG CONSULT, Pharm Oke remains committed to delivering exceptional healthcare services, promoting wellness, and advancing the healthcare industry. His leadership, mentorship, and consulting services have made a lasting impact on the lives of many students, healthcare professionals, and patients.He is building something spectacular in the area of providing quality pharmaceuticals, consulting services for College of health sciences and providing good mentorship for students and young graduates.He is a role model in pharmaceutical and academic spaces..</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Address: Head Office - Opposite Bamigboye junction, Ajilosun, Ado Ekiti</p>
+    <p>Branch Office - No 1 Market Road, Palace Hotel, Ijero Ekiti</p>
+    <p>📞 Phone: +234 7066176003</p>
+    <p>✉️ Email: mhdcconnect@gmail.com</p>
+    
+    
+<!-- ===== Photospeaks Section ===== -->
+<section id="photospeaks" style="padding: 50px 20px; background-color: #ffffff;">
+  <h2 style="text-align: center; margin-bottom: 40px; font-family: Arial, sans-serif; color: #2c7a7b;">Photo Speaks</h2>
+  
+  <div class="photospeaks-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+    <div class="photospeaks-item">
+      <img src="https://i.ibb.co/MkWd5ZhY/IMG-20250815-WA0040.jpg" alt="IMG-20250815-WA0040" width="150" height="150">
+    </div>
+    <div class="photospeaks-item">
+      <img src="https://i.ibb.co/gLyYnbCt/IMG-20250815-WA0039.jpg" alt="IMG-20250815-WA0039" width="150" height="150">
+    </div>
+
+<div style="position:relative; width:100%; height:0px; padding-bottom:45.000%"><iframe allow="fullscreen;autoplay" allowfullscreen height="100%" src="https://streamable.com/e/ekcncf?autoplay=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+  </div>
+  <div>
+  <div style="position:relative; width:100%; height:0px; padding-bottom:215.789%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/f4cpqz?" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+  </div>
+  <div style="position:relative; width:100%; height:0px; padding-bottom:176.847%"><iframe allow="fullscreen" allowfullscreen height="100%" src="https://streamable.com/e/4qjgq3?nocontrols=1" width="100%" style="border:none; width:100%; height:100%; position:absolute; left:0px; top:0px; overflow:hidden;"></iframe></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="videoLightbox" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8);">
+  <span id="closeLightbox" onclick="closeLightbox()" style="position: absolute; top: 20px; right: 30px; font-size: 30px; color: white; cursor: pointer;">×</span>
+  <iframe id="lightboxVideo" src="" allow="fullscreen;autoplay" allowfullscreen 
+          style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: 40%; border: none;">
+  </iframe>
+</div>
+
+<script>
+function openLightbox() {
+  document.getElementById("videoLightbox").style.display = "block";
+  document.getElementById("lightboxVideo").src = "https://streamable.com/e/ekcncf?autoplay=1";
+}
+
+function closeLightbox() {
+  document.getElementById("videoLightbox").style.display = "none";
+  document.getElementById("lightboxVideo").src = "";
+}
+</script>
+
+<!-- WhatsApp Button (Top) -->
+<a href="https://wa.me/2347066176003" target="_blank" 
+   id="whatsappButton"
+   style="position: fixed; bottom: 80px; right: 20px;
+          background-color: #25D366; color: white; padding: 15px; border-radius: 50%; 
+          font-size: 24px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.3); 
+          z-index: 1000; display: none; opacity: 0; transition: opacity 0.5s;">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Back-to-Top Button (Below WhatsApp) -->
+<a href="#" id="backToTop" 
+   style="position: fixed; bottom: 20px; right: 20px; 
+          background-color: #333; color: white; padding: 12px 15px; 
+          border-radius: 50%; font-size: 20px; text-align: center; 
+          box-shadow: 0 2px 6px rgba(0,0,0,0.3); z-index: 1000; display: none; opacity: 0; transition: opacity 0.5s;">
+  ↑
+</a>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Scripts -->
+<script>
+  window.addEventListener('scroll', function() {
+    const whatsapp = document.getElementById('whatsappButton');
+    const backToTop = document.getElementById('backToTop');
+
+    // Show both buttons after scrolling 300px
+    if (window.scrollY > 300) {
+      whatsapp.style.display = 'block';
+      whatsapp.style.opacity = '0.7';
+      backToTop.style.display = 'block';
+      backToTop.style.opacity = '1';
+    }
+  });
+
+  // Smooth scroll to top
+  document.getElementById('backToTop').addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 POSA Pharmacy & MHDC. All rights reserved.
+</footer>
+
+<!-- Other page content here -->
+
+<!-- Back to Top Button -->
+<button id="backToTop">Back to Top</button>
+
+<!-- Script for Back to Top -->
+<script>
+  const backToTopBtn = document.getElementById("backToTop");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backToTopBtn.style.display = "block";
+    } else {
+      backToTopBtn.style.display = "none";
+    }
+  };
+
+  backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</body>
+</html>
